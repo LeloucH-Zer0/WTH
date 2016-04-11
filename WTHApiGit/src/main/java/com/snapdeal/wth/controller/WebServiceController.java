@@ -18,12 +18,12 @@ public class WebServiceController
 		return Response.status(200).entity(result).build();
 	}
 	
-	@Path("/like/{c}")
+	@Path("/like/{DealId}/{UserId}")
 	@GET
 	@Produces("application/json")
-	public Response likeAction(@PathParam("c") Double c)
+	public Response likeAction(@PathParam("DealId") Integer dealId, @PathParam("UserId") Integer userId)
 	{
-		String result = "Hello There !"+ c.toString();
+		String result = "Hello There !"+ dealId.toString() + userId.toString();
 		return Response.status(200).entity(result).build();
 	}
 }
